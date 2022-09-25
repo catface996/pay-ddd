@@ -19,19 +19,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TestRpServiceTest {
 
   @Autowired
-  private TradeOrderRpService payOrderRpService;
-
-  @Autowired
   private PayOrderRpService payOrderRpService;
 
-
-  @Test
-  public void testSaveTradeOrder() {
-    TradeOrder entity = new TradeOrder();
-    entity.setTradeAmount(new BigDecimal("10.00"));
-    entity.setTradeItemNum(2);
-    payOrderRpService.save(entity);
-  }
 
   @Test
   public void testSavePayOrder() {
