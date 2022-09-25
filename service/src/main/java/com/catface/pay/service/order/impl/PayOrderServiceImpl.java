@@ -38,9 +38,11 @@ public class PayOrderServiceImpl implements PayOrderService {
 
     // 支付金额为2,或者为3时,通过异常对保存的支付单进行回滚
     if (entity.getPayAmount().equals(new BigDecimal("2"))) {
+      log.info("金额为2,回滚");
       throw new CatfaceException("invalid_trade_amount", "指定金额故意失败回滚");
     }
     if (entity.getPayAmount().equals(new BigDecimal("3"))) {
+      log.info("金额为3,回滚");
       throw new CatfaceException("invalid_trade_amount", "指定金额故意失败回滚");
     }
 
